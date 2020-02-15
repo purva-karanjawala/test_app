@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
+
+
+<%= link_to 'Add New Question', new_topic_question_path(@topic) %>
+<br/>
+<%= link_to 'Back', users_path %>
