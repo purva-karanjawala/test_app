@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :topics
   has_many :questions
   has_many :answers
+  has_many :topics, through: :follow_topics
 end
