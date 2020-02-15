@@ -3,13 +3,11 @@ class QuestionsController < ApplicationController
 
   def show
     @question = @topic.questions.find(params[:id])
+    @answer = @question.answers.new
   end
 
   def new
     @question = @topic.questions.new
-  end
-
-  def edit
   end
 
   def create
@@ -20,16 +18,6 @@ class QuestionsController < ApplicationController
         format.html { redirect_to topic_question_path(@topic, @question), notice: 'Question was successfully created.' }
       else
         format.html { render :new }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to topic_question_path(@topic, @question), notice: 'Question was successfully updated.' }
-      else
-        format.html { render :edit }
       end
     end
   end

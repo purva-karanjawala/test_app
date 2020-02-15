@@ -1,0 +1,12 @@
+<h3>Post a Answer</h3>
+<%= form_for [ @question, @answer ] do |form| %>
+
+  <p>
+    <%= form.label :answer %><br/>
+    <%= form.text_area :answer %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </p>
+  <p>
+    <%= form.submit 'Submit' %>
+  </p>
+<% end %>
